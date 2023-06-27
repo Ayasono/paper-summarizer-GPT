@@ -4,10 +4,8 @@ import {
     UserOutlined,
 } from '@ant-design/icons';
 import {Layout, Menu, theme} from 'antd';
-import {
-    RouterProvider,
-} from "react-router-dom";
-import {router} from './router';
+import { useHistory} from 'react-router-dom';
+import RouterList from "./RouterList.tsx";
 
 const {Header, Content, Footer, Sider} = Layout;
 
@@ -15,29 +13,32 @@ const items = [
     {
         key: '1',
         icon: <UploadOutlined/>,
-        label: "Upload"
+        label: "Upload",
+        path: '/'
     },
     {
         key: '2',
         icon: <UserOutlined/>,
-        label: "Result"
+        label: "Result",
+        path: '/result'
     },
     {
         key: '3',
         icon: <UserOutlined/>,
-        label: "My Page"
+        label: "My Page",
+        path: '/user'
     },
 
 ]
 
-const App: React.FC = (props) => {
+const App: React.FC = () => {
     const {
         token: {colorBgContainer},
     } = theme.useToken();
 
+    const history = useHistory();
     const jumpToPage = (e: any) => {
-        console.log(e)
-        console.log(props)
+        history.push(items[e.key - 1].path)
     }
 
     return (
@@ -64,7 +65,7 @@ const App: React.FC = (props) => {
                 <Header style={{padding: 0, background: colorBgContainer}}/>
                 <Content style={{margin: '24px 16px 0', overflow: 'initial'}}>
                     <div style={{padding: 24, textAlign: 'center', background: colorBgContainer}}>
-                        <RouterProvider router={router}/>
+                        <RouterList />
                     </div>
                 </Content>
                 <Footer style={{textAlign: 'center'}}>

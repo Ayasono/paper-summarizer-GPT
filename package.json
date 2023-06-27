@@ -10,18 +10,23 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-buddy/ide-toolbox": "^2.3.1",
+    "@react-buddy/palette-antd": "^5.3.0",
     "antd": "^5.6.3",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
+    "pdfjs-dist": "^3.7.107",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router": "^6.14.0",
-    "react-router-dom": "^6.14.0",
+    "react-router": "^5.3.4",
+    "react-router-dom": "^5.3.4",
     "sort-by": "^1.2.0"
   },
   "devDependencies": {
+    "@types/pdfjs-dist": "^2.10.378",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
+    "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
     "@vitejs/plugin-react-swc": "^3.0.0",
