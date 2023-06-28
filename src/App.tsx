@@ -57,13 +57,12 @@ const App: React.FC = () => {
             </Sider>
             <Layout className='site-layout'
                     style={{marginLeft: 200}}>
-                <Header style={{padding: 0, background: colorBgContainer}}/>
                 <Content style={{margin: "24px 16px 0", overflow: "initial"}}>
                     <div style={{padding: 24, textAlign: "center", background: colorBgContainer}}>
                         <RouterList/>
                     </div>
                 </Content>
-                <Footer style={{textAlign: "center"}}>
+                <Footer style={{textAlign: "center", position: "fixed", left: "200px", bottom: "0", width: "100%"}}>
                     Created by Yuehu Jiang | Contact: yuehu@ualberta.ca
                 </Footer>
             </Layout>

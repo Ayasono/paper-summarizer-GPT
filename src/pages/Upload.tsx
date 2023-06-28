@@ -31,7 +31,7 @@ export const Upload = () => {
             }
             const pageTexts = await Promise.all(pageTextPromises);
             // important: 获得所有页的文本
-            // console.log(pageTexts.join(" "));
+            console.log(pageTexts.join(" "));
             return pageTexts.join(" ");
         };
 

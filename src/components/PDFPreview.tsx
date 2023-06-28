@@ -27,27 +27,26 @@ const PDFViewer = ({pdf, isBtnsHidden, setIsBtnsHidden }) => {
 
     return (
         <>
-            <div className='btns flex justify-center gap-5 items-center'
-                 style={{width: 800, display: isBtnsHidden}}>
+            <div className='btns flex justify-center gap-5 items-center w-1/2 py-1'
+                 style={{ display: isBtnsHidden}}>
                 <Button onClick={() => handleClick(true)}>Prev</Button>
                 <Button onClick={() => handleClick(false)}>Next</Button>
                 <p>{pageNumber} / {numPages}</p>
             </div>
-            <div className='pdf-container'
-                 style={{width: 800, height: 800, overflow: "auto"}}>
+            <div className='pdf-container w-1/2'
+                 style={{height: 700, overflow: "auto"}}>
                 {pdf && (
                     <Document file={pdf}
                               onLoadSuccess={onDocumentLoadSuccess}>
                         <Page
                             pageNumber={pageNumber}
-                            width={800}
+
                             renderAnnotationLayer={false}
                         />
                     </Document>
                 )}
             </div>
-            <div className='text'
-                 style={{width: 800}}></div>
+            <div className='text w-1/2'></div>
         </>
     );
 };
