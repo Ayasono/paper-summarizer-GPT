@@ -26,14 +26,14 @@ const PDFViewer = ({pdf, isBtnsHidden, setIsBtnsHidden }) => {
     };
 
     return (
-        <>
-            <div className='btns flex justify-center gap-5 items-center w-1/2 py-1'
+        <div className={"w-full"}>
+            <div className='btns flex justify-center gap-5 items-center py-1'
                  style={{ display: isBtnsHidden}}>
                 <Button onClick={() => handleClick(true)}>Prev</Button>
                 <Button onClick={() => handleClick(false)}>Next</Button>
                 <p>{pageNumber} / {numPages}</p>
             </div>
-            <div className='pdf-container w-1/2'
+            <div className='pdf-container'
                  style={{height: 700, overflow: "auto"}}>
                 {pdf && (
                     <Document file={pdf}
@@ -46,8 +46,8 @@ const PDFViewer = ({pdf, isBtnsHidden, setIsBtnsHidden }) => {
                     </Document>
                 )}
             </div>
-            <div className='text w-1/2'></div>
-        </>
+            <div className='text'></div>
+        </div>
     );
 };
 

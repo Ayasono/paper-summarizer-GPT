@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {
     UploadOutlined,
     UserOutlined,
@@ -62,8 +62,9 @@ const App: React.FC = () => {
                         <RouterList/>
                     </div>
                 </Content>
+                <div className='placeholder' style={{ height: "68px"}}></div>
                 <Footer style={{textAlign: "center", position: "fixed", left: "200px", bottom: "0", width: "100%"}}>
-                    Created by Yuehu Jiang | Contact: yuehu@ualberta.ca
+                    Created by Yuehu Jiang | Contact: yuehujiang@sina.com
                 </Footer>
             </Layout>
         </Layout>

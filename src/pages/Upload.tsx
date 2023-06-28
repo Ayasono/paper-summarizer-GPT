@@ -2,7 +2,8 @@ import {Button, Upload as UploadFiles} from "antd";
 import {UploadOutlined} from "@ant-design/icons";
 import * as PDFJS from "pdfjs-dist";
 import PDFPreview from "../components/PDFPreview.tsx";
-import { useState} from "react";
+import React, { useState} from "react";
+import {Summarizer} from "../components/Summarizer.tsx";
 
 interface Files {
     file: File,
@@ -14,6 +15,7 @@ export const Upload = () => {
         "https://cdn.jsdelivr.net/npm/pdfjs-dist@3/build/pdf.worker.min.js";
     const [isBtnsHidden, setIsBtnsHidden]:[string, any] = useState("none");
     const [PDF, setPDF]: [File | null, any] = useState(null);
+    const [pdfStr, setPdfStr]: [string, React.Dispatch<string>] = useState("");
     const onFileUploaded = (file: Files) => {
         if (!file.file) return;
         const reader = new FileReader();
@@ -31,8 +33,7 @@ export const Upload = () => {
             }
             const pageTexts = await Promise.all(pageTextPromises);
             // important: 获得所有页的文本
-            console.log(pageTexts.join(" "));
-            return pageTexts.join(" ");
+            setPdfStr(pageTexts.join(" "));
         };
 
         reader.readAsArrayBuffer(file.file);
@@ -55,11 +56,14 @@ export const Upload = () => {
             >
                 <Button icon={<UploadOutlined/>}>Click to Upload</Button>
             </UploadFiles>
-            <PDFPreview
-                pdf={PDF}
-                isBtnsHidden={isBtnsHidden}
-                setIsBtnsHidden={setIsBtnsHidden}
-            />
+            <div className='w-full flex flex-nowrap'>
+                <PDFPreview
+                    pdf={PDF}
+                    isBtnsHidden={isBtnsHidden}
+                    setIsBtnsHidden={setIsBtnsHidden}
+                />
+                <Summarizer pdfStr={pdfStr} />
+            </div>
         </>
     );
 };
