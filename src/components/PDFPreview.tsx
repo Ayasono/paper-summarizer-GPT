@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {Document, Page, pdfjs} from "react-pdf";
 import {Button} from "antd";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
@@ -26,7 +26,7 @@ const PDFViewer = ({pdf, isBtnsHidden, setIsBtnsHidden }) => {
     };
 
     return (
-        <div className={"w-full"}>
+        <div className={"w-1/2"}>
             <div className='btns flex justify-center gap-5 items-center py-1'
                  style={{ display: isBtnsHidden}}>
                 <Button onClick={() => handleClick(true)}>Prev</Button>

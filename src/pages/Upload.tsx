@@ -33,7 +33,8 @@ export const Upload = () => {
             }
             const pageTexts = await Promise.all(pageTextPromises);
             // important: 获得所有页的文本
-            setPdfStr(pageTexts.join(" "));
+            const str = pageTexts.join(" ");
+            setPdfStr(str);
         };
 
         reader.readAsArrayBuffer(file.file);

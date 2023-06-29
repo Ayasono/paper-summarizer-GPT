@@ -1,14 +1,16 @@
 import request from "./index.ts";
 
+const url = import.meta.env.VITE_REACT_APP_API_URL
+
 export const getTurbo = (max_tokens=2000, messages: []) => {
     return request({
-        url: "/v1/chat/completions",
+        url,
         method: "post",
         data: {
             "frequency_penalty": 1,
             "presence_penalty": 1,
             "max_tokens": max_tokens,
-            "model": "gpt-3.5-turbo-0301",
+            "model": "gpt-3.5-turbo",
             "temperature": 1,
             messages
         }
