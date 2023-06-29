@@ -34,7 +34,7 @@ export const Summarizer = ({pdfStr}) => {
         setConversations([{role: "user", content: pdfStr}])
     }, [pdfStr]);
 
-    return (
+    return pdfStr && (
         <div>
             <Button onClick={useGPT}>Summarize with GPT</Button>
             <div>{summarizedMessages && summarizedMessages.map((summarizedMessage) => (
