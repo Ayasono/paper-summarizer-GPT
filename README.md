@@ -4,7 +4,9 @@
 - 0629: finished core function: GPT summarize
 - [x] GPT Summarize
 - [x] reduce prompt length if exceed maximum token length.
+- [ ] optimize prompt length reduce method
 - [ ] page style optimize
+- [ ] add user page
 
 ## usage
 You need to set up a .env file in order to call chatGPT
