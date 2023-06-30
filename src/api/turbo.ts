@@ -10,7 +10,7 @@ export const getTurbo = (max_tokens=2000, messages: []) => {
             "frequency_penalty": 1,
             "presence_penalty": 1,
             "max_tokens": max_tokens,
-            "model": "gpt-3.5-turbo",
+            "model": "gpt-3.5-turbo-16k",
             "temperature": 1,
             messages
         }

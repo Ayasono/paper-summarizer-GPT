@@ -4,7 +4,8 @@ import {getTurbo} from "../api/turbo.ts";
 
 export const Summarizer = ({pdfStr}) => {
     const [max_tokens, setMax_tokens] = useState(1000);
-    let prompt = `please summarize the following paper precisely in english, do not misunderstand to translate the paper: ${pdfStr}`.slice(0, 4000 * 4 - max_tokens) ;
+    let prompt = `please summarize the following paper precisely in mandarin, divide your response in sections such as introduction, methodology. etc, try to explain clearly. Do not misunderstand to translate the paper: ${pdfStr}`;
+        // .slice(0, 4000 * 4 - max_tokens) ;
     const [messages, setMessages] = useState([]); // multiple conversations
     const [summarizedMessages, setSummarizedMessages] = useState([]); // single conversation
     const [conversations, setConversations] = useState([{role: "user", content: prompt}]);
@@ -36,7 +37,7 @@ export const Summarizer = ({pdfStr}) => {
         <div>
             <Button onClick={useGPT}>Summarize with GPT</Button>
             <div>{summarizedMessages && summarizedMessages.map((summarizedMessage) => (
-                <div className={"whitespace-pre-line"} key={Math.random()}>
+                <div className={"whitespace-pre-line text-left"} key={Math.random()}>
                     <p>{summarizedMessage}</p>
                 </div>
             ))}

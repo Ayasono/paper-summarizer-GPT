@@ -12,9 +12,9 @@
 You need to set up a .env file in order to call chatGPT
 
 ```
-VITE_REACT_APP_API_KEY"your api key
-VITE_REACT_APP_API_BASE_URL=your base url
-VITE_REACT_APP_API_URL=your url
+VITE_REACT_APP_API_KEY=your_api_key
+VITE_REACT_APP_API_BASE_URL=your_base_url
+VITE_REACT_APP_API_URL=your_url
 
 ```
 then, run code
