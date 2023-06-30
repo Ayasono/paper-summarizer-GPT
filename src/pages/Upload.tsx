@@ -57,7 +57,7 @@ export const Upload = () => {
             >
                 <Button icon={<UploadOutlined/>}>Click to Upload</Button>
             </UploadFiles>
-            <div className='w-full flex flex-nowrap'>
+            <div className='w-full flex flex-nowrap py-5'>
                 <PDFPreview
                     pdf={PDF}
                     isBtnsHidden={isBtnsHidden}
