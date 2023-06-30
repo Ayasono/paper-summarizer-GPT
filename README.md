@@ -25,4 +25,4 @@ npm run dev
 finally, you are done!
 
 ## example usage
-![image]https://github.com/Ayasono/paper-summarizer-GPT/blob/main/public/example.png
+![image](https://github.com/Ayasono/paper-summarizer-GPT/blob/main/public/example.png)
